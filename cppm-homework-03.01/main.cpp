@@ -86,23 +86,46 @@ int main(int argc, const char * argv[]) {
     {
         std::cout << "Please enter Num1: ";
         std::cin >> i;
-        while (i == 0)
+        
+        bool success;
+        success = calculator.set_num1(i);
+        while (success == false)
         {
             std::cout << "Wrong number!" << '\n';
             std::cout << "Please enter Num1: ";
             std::cin >> i;
+        success = calculator.set_num1(i);
         };
-        calculator.set_num1(i);
-        
+
+//        std::cout << "Please enter Num1: ";
+//        std::cin >> i;
+//        while (i == 0)
+//        {
+//            std::cout << "Wrong number!" << '\n';
+//            std::cout << "Please enter Num1: ";
+//            std::cin >> i;
+//        };
+//        success = calculator.set_num1(i);
+//
         std::cout << "Please enter Num2: ";
         std::cin >> j;
-        while (j == 0)
+        
+        bool success2;
+        success2 = calculator.set_num2(j);
+        while (success2 == false)
         {
             std::cout << "Wrong number!" << '\n';
             std::cout << "Please enter Num2: ";
             std::cin >> j;
+        success2 = calculator.set_num2(j);
         };
-        calculator.set_num2(j);
+//        while (j == 0)
+//        {
+//            std::cout << "Wrong number!" << '\n';
+//            std::cout << "Please enter Num2: ";
+//            std::cin >> j;
+//        };
+//        calculator.set_num2(j);
         
         std::cout << "num1 + num 2 = " << calculator.add() << '\n';
         std::cout << "num1 - num 2 = " << calculator.subtract_2_1() << '\n';
